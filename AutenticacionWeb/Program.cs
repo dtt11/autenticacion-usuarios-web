@@ -1,7 +1,17 @@
+using AutenticacionWeb.Server;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<ApplicationBDContext>(options =>
+{
+
+    var connectionString = builder.Configuration.GetConnectionString("ConexionDefecto");
+    options.UseSqlServer(connectionString);
+});
 
 var app = builder.Build();
 
