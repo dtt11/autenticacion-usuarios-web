@@ -1,5 +1,7 @@
 using AutenticacionWeb.Server;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using AutenticacionWeb.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,8 @@ builder.Services.AddDbContext<ApplicationBDContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("ConexionDefecto");
     options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationBDContext>();
 
 var app = builder.Build();
 
