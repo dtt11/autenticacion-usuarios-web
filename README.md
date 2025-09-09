@@ -83,5 +83,4 @@ Iniciar sesión con las credenciales creadas.
 Asignar roles y validar acceso a páginas protegidas.
 
 🧑‍💻 Autor
-
-Juan Vargas Robles – Diplomado en Informática
+Daniel Tapia Traña – Diplomado en Informática
